@@ -3,6 +3,9 @@ FROM ghost:5
 WORKDIR /var/lib/ghost
 
 RUN npm install -g ghos3 && \
+    mkdir ./content/adapters && \
+    mkdir ./content/adapters/storage && \
+    mkdir ./content/adapters/storage/s3 && \
     cp -r /usr/local/lib/node_modules/ghos3/* ./content/adapters/storage/s3
 
 # RUN npm install --prefix /tmp/ghos3 ghos3 && \
